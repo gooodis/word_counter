@@ -26,7 +26,6 @@ def get_text_files_from_paths(paths):
                         text_files_path.append(os.path.join(dirpath, filename))
         elif path.split('.')[-1] == 'txt':
             text_files_path.append(os.path.join(dirpath, filename))
-            # text_files_path.append(self._read_file(path))
         else:
             print('Error: could not find folder/text file.')
     return text_files_path
