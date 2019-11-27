@@ -10,7 +10,6 @@ import pygtrie as tri
 
 import utils
 
-TEXT_FILES_SUFFIXES = {'txt', 'log'}
 LOGS_FOLDER_PATH = '/var/log'
 DATE_PATTERN = "%b %d %H:%M:%S"
 CLOCK_PATTERN = '[0-2][0-9]:[0-5][0-9]:[0-5][0-9]'
@@ -123,8 +122,7 @@ class WordCounter:
         text_files_path = []
         for dirpath, unused_dirnames, filenames in os.walk(LOGS_FOLDER_PATH):
             for filename in filenames:
-                if filename.split('.')[-1] in TEXT_FILES_SUFFIXES:
-                    text_files_path.append(os.path.join(dirpath, filename))
+                text_files_path.append(os.path.join(dirpath, filename))
         return text_files_path
 
     def count_words(self):
